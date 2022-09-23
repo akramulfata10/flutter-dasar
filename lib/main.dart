@@ -11,29 +11,40 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const name = "akramulfata";
-    const nim = "2020573010004";
-
-    const name1 = 'akramulfata';
-    const nim1 = 93009029309;
-    const height1 = 1.85;
-
-    String data(String name, int age, double height) {
-      return "Namaku $name1. nimku $nim1, Tinggiku $height1 meter";
-    }
-
+    // const nim = "2020573010004";
+    // const name1 = 'akramulfata';
+    // const nim1 = 93009029309;
+    // const height1 = 1.85;
+    // String data(String name, int age, double height) {
+    //   return "Namaku $name1. nimku $nim1, Tinggiku $height1 meter";
+    // }
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar:
-              AppBar(title: const Text("nama di ambil dari variabel  : $name")),
-          body: const Center(
-            child: Text("nim saya di ambil dari variabel : $nim"),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(title: const Text("belajar ui succinctly  : $name")),
+        body: Container(
+          margin: EdgeInsets.all(100),
+          padding: EdgeInsets.all(50),
+          decoration: BoxDecoration(
+            color: Colors.lightBlue,
+            shape: BoxShape.circle,
           ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              print(data(name1, nim1, height1));
-            },
-          ),
-        ));
+          child: Text('Container'),
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.ac_unit),
+          onPressed: () {
+            print('oh , it is cold outside');
+          },
+        ),
+      ),
+      theme: ThemeData(
+        primaryColor: Colors.indigo,
+        accentColor: Colors.lightBlue,
+        textTheme: TextTheme(
+          bodyText2: TextStyle(fontSize: 26, fontStyle: FontStyle.italic),
+        ),
+      ),
+    );
   }
 }
